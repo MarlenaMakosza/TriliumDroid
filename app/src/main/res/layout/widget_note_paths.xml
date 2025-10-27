@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_margin"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:contentPadding="@dimen/card_padding"
+    app:cardBackgroundColor="@color/surface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/WidgetInner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -49,4 +52,4 @@
             tools:listitem="@layout/item_note_path"
             app:layout_constraintTop_toBottomOf="@id/widget_note_paths_divider" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

@@ -1,22 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/Widget"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/card_margin"
+    app:cardElevation="@dimen/card_elevation"
+    app:cardCornerRadius="@dimen/card_corner_radius"
+    app:contentPadding="@dimen/card_padding"
+    app:cardBackgroundColor="@color/surface">
 
     <androidx.constraintlayout.widget.ConstraintLayout
-        style="@style/WidgetInner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <TextView
             android:id="@+id/widget_note_info_title"
-            style="@style/WidgetTableHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_metadata"
+            android:textAppearance="@style/TextAppearance.App.Subtitle1"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -39,10 +42,11 @@
 
         <TextView
             android:id="@+id/widget_note_info_id_label"
-            style="@style/WidgetTableRowLabel"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/label_note_id"
+            android:textAppearance="@style/TextAppearance.App.Caption"
+            android:paddingRight="@dimen/bigger_margin"
             app:layout_constraintBaseline_toBaselineOf="@id/widget_note_info_id_content"
             app:layout_constraintStart_toStartOf="parent" />
 
@@ -106,4 +110,4 @@
             app:layout_constraintTop_toBottomOf="@id/widget_note_info_created_content"
             tools:ignore="HardcodedText" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-</LinearLayout>
+</com.google.android.material.card.MaterialCardView>

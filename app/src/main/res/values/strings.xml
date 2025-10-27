@@ -176,6 +176,12 @@
     <string name="toast_ssl_certificate">Restart sync to accept new certificate</string>
     <string name="button_journal">Select journal date</string>
     <string name="toast_no_journal_found">No journal found!</string>
+    <!-- Drawer Headers -->
+    <string name="drawer_notes">Notes</string>
+    <string name="drawer_metadata">Note Details</string>
+    <!-- Empty States -->
+    <string name="empty_notes_title">No notes yet</string>
+    <string name="empty_notes_message">Tap the New button to create your first note</string>
     <!-- Bottom Navigation -->
     <string name="nav_notes">Notes</string>
     <string name="nav_search">Search</string>

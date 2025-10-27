@@ -476,7 +476,15 @@ class MainActivity : AppCompatActivity() {
 	}
 
 	fun showFragment(frag: Fragment, hideFabs: Boolean) {
-		// Bottom navigation is always visible, hideFabs parameter kept for compatibility
+		// Hide bottom navigation for full-screen fragments (NavigationFragment)
+		if (frag is NavigationFragment) {
+			Log.d(TAG, "Hiding bottom navigation for NavigationFragment")
+			binding.bottomNavigation.visibility = View.GONE
+		} else {
+			Log.d(TAG, "Showing bottom navigation for ${frag::class.simpleName}")
+			binding.bottomNavigation.visibility = View.VISIBLE
+		}
+
 		val item = binding.toolbar.menu.findItem(R.id.action_edit)
 		if (frag is NoteEditFragment) {
 			item?.setIcon(R.drawable.bx_save)
