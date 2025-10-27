@@ -111,8 +111,7 @@ class CanvasNoteFragment : Fragment(R.layout.fragment_canvas_note), NoteRelatedF
 		binding.webview.loadUrl(WEBVIEW_DOMAIN + note.id.rawId())
 
 		val main = (this@CanvasNoteFragment.activity ?: return) as MainActivity
-		// FABs obscure excalidraw menu items
-		main.fixVisibilityFABs(true)
+		// Bottom navigation doesn't obscure content (unlike old FABs)
 
 		main.setupActions(
 			consoleLog,

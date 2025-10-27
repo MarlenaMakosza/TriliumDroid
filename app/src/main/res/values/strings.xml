@@ -176,6 +176,12 @@
     <string name="toast_ssl_certificate">Restart sync to accept new certificate</string>
     <string name="button_journal">Select journal date</string>
     <string name="toast_no_journal_found">No journal found!</string>
+    <!-- Bottom Navigation -->
+    <string name="nav_notes">Notes</string>
+    <string name="nav_search">Search</string>
+    <string name="nav_new">New</string>
+    <string name="nav_map">Map</string>
+    <string name="nav_more">More</string>
     <!-- FAB IDs: showNoteTree", "jumpToNote", "noteNavigation", "editNote", "shareNote", "deleteNote", "noteMap", "sync" -->
     <string-array name="fabs">
         <item>@string/action_show_note_tree</item>

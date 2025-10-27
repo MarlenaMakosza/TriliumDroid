@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_notes"
+        android:icon="@drawable/bx_align_left"
+        android:title="@string/nav_notes" />
+    <item
+        android:id="@+id/nav_search"
+        android:icon="@drawable/bx_search_alt"
+        android:title="@string/nav_search" />
+    <item
+        android:id="@+id/nav_new"
+        android:icon="@drawable/bx_plus_circle"
+        android:title="@string/nav_new" />
+    <item
+        android:id="@+id/nav_map"
+        android:icon="@drawable/bx_globe_alt"
+        android:title="@string/nav_map" />
+    <item
+        android:id="@+id/nav_more"
+        android:icon="@drawable/bx_cog"
+        android:title="@string/nav_more" />
+</menu>

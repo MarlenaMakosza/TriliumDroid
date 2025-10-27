@@ -98,9 +98,6 @@ class MainActivity : AppCompatActivity() {
 	private var shareVisible: Boolean = false
 	private var deleteVisible: Boolean = true
 
-	private var hideLeftFAB = false
-	private var hideRightFAB = false
-
 	var tree: TreeItemAdapter? = null
 
 	companion object {
@@ -258,17 +255,34 @@ class MainActivity : AppCompatActivity() {
 			btnAddNotePath.visibility = View.VISIBLE
 		}
 
-		binding.fab.setOnClickListener {
-			val action = ConfigureFabsDialog.getRightAction()
-			performAction(action ?: return@setOnClickListener)
+		// Setup Bottom Navigation
+		binding.bottomNavigation.setOnItemSelectedListener { item ->
+			when (item.itemId) {
+				R.id.nav_notes -> {
+					openDrawerTree()
+					true
+				}
+				R.id.nav_search -> {
+					controller.doMenuAction(this, R.id.action_jump_to_note)
+					true
+				}
+				R.id.nav_new -> {
+					if (!Preferences.readOnlyMode()) {
+						controller.newNote(this)
+					}
+					true
+				}
+				R.id.nav_map -> {
+					controller.globalNoteMap(this)
+					true
+				}
+				R.id.nav_more -> {
+					openDrawerMetadata()
+					true
+				}
+				else -> false
+			}
 		}
-		binding.fabTree.setOnClickListener {
-			val action = ConfigureFabsDialog.getLeftAction()
-			performAction(action ?: return@setOnClickListener)
-		}
-		// hide FABs until ready
-		binding.fabTree.hide()
-		binding.fab.hide()
 
 		onBackPressedDispatcher.addCallback(this, object : OnBackPressedCallback(true) {
 			override fun handleOnBackPressed() {
@@ -279,16 +293,6 @@ class MainActivity : AppCompatActivity() {
 
 	override fun onStart() {
 		super.onStart()
-		val rightAction = ConfigureFabsDialog.getRightAction()
-		if (rightAction != null) {
-			binding.fab.setImageResource(ConfigureFabsDialog.getIcon(rightAction))
-		}
-		hideRightFAB = rightAction == null
-		val leftAction = ConfigureFabsDialog.getLeftAction()
-		if (leftAction != null) {
-			binding.fabTree.setImageResource(ConfigureFabsDialog.getIcon(leftAction))
-		}
-		hideLeftFAB = leftAction == null
 		controller.onStart(this)
 	}
 
@@ -471,22 +475,8 @@ class MainActivity : AppCompatActivity() {
 		binding.drawerLayout.openDrawer(GravityCompat.END)
 	}
 
-	fun fixVisibilityFABs(hideFabs: Boolean) {
-		if (hideFabs) {
-			binding.fabTree.hide()
-			binding.fab.hide()
-		} else {
-			if (!hideLeftFAB) {
-				binding.fabTree.show()
-			}
-			if (!hideRightFAB) {
-				binding.fab.show()
-			}
-		}
-	}
-
 	fun showFragment(frag: Fragment, hideFabs: Boolean) {
-		fixVisibilityFABs(hideFabs)
+		// Bottom navigation is always visible, hideFabs parameter kept for compatibility
 		val item = binding.toolbar.menu.findItem(R.id.action_edit)
 		if (frag is NoteEditFragment) {
 			item?.setIcon(R.drawable.bx_save)
