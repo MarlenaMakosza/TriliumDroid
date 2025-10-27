@@ -1,9 +1,21 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="background">@color/black</color>
-    <color name="background2">#FF111111</color>
-    <color name="background3">#111111</color>
-    <color name="foreground">@color/white</color>
-    <color name="tree_normal">#FF111111</color>
+    <!-- Dark Theme Colors - Professional Blue Gray / Cyan -->
+    <!-- Background colors for dark mode -->
+    <color name="background">#FF121212</color>
+    <color name="background2">#FF1E1E1E</color>
+    <color name="background3">#FF2C2C2C</color>
+
+    <!-- Text colors for dark mode -->
+    <color name="foreground">#FFFFFFFF</color>
+    <color name="text_secondary">#FFB0B0B0</color>
+
+    <!-- Tree view colors for dark mode -->
+    <color name="tree_selected">#00838F</color>
+    <color name="tree_selected_text">#E0F7FA</color>
+    <color name="tree_normal">#FF1E1E1E</color>
+
+    <!-- UI elements -->
     <color name="divider_grey">#55808080</color>
+    <color name="surface">#FF1E1E1E</color>
 </resources>

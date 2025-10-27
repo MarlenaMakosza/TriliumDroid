@@ -2,26 +2,38 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="40dp">
+    android:layout_height="48dp"
+    android:minHeight="48dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
 
     <Button
         android:id="@+id/label"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="match_parent"
+        android:minHeight="48dp"
         android:ellipsize="end"
         android:gravity="start|center_vertical"
         android:paddingLeft="@dimen/section_margin"
+        android:paddingRight="@dimen/activity_margin"
+        android:paddingTop="@dimen/normal_margin"
+        android:paddingBottom="@dimen/normal_margin"
         android:singleLine="true"
         android:textColor="@color/foreground"
+        android:textSize="@dimen/bigger_text_size"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 
     <TextView
         android:id="@+id/note_icon"
         android:layout_width="wrap_content"
-        android:layout_height="40dp"
+        android:layout_height="match_parent"
+        android:minHeight="48dp"
         android:elevation="7dp"
         android:fontFamily="@font/boxicons"
         android:gravity="start|center_vertical"
         android:paddingLeft="@dimen/normal_margin"
+        android:paddingTop="@dimen/normal_margin"
+        android:paddingBottom="@dimen/normal_margin"
+        android:textSize="@dimen/big_text_size"
         tools:ignore="RtlHardcoded,RtlSymmetry" />
 </FrameLayout>

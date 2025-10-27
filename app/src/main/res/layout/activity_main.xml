@@ -34,7 +34,7 @@
                 android:focusable="true"
                 android:fontFamily="@font/boxicons"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
             <TextView
                 android:id="@+id/toolbar_title"
@@ -44,7 +44,7 @@
                 android:clickable="true"
                 android:focusable="true"
                 android:textAppearance="@style/TextAppearance.AppCompat.Title"
-                android:textColor="@color/black" />
+                android:textColor="@color/white" />
 
         </androidx.appcompat.widget.Toolbar>
 
